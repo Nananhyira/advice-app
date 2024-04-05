@@ -20,12 +20,11 @@ const Advice = () => {
 	return (
 		<div className='container m-5 j'>
 			<div className='row'>
-				<div className='col-6  ustify-content-center'>
-					<Card style={{ width: "18rem" }}>
+				<div className='col-6  justify-content-center'>
+					<Card  className="justify-content-center"style={{ width: "25rem" , height:"20rem", backgroundColor:"red"} }>
 						<Card.Body>
-							<Card.Title>Advice Number: {data.id}</Card.Title>
-							<Card.Text>{data.advice}</Card.Text>
-							<Button variant='primary' onClick={() => location.reload()}>Load</Button>
+							<Card.Title className="text-center" style={{color:"white" ,fontSize:"20px"}}> Advice Number: {data.id}</Card.Title>
+							<Card.Text className="text-center" style={{color:"white" ,fontSize:"30px"}}>{data.advice}</Card.Text>
 						</Card.Body>
 					</Card>
 				</div>
