@@ -5,42 +5,30 @@ import Form from "react-bootstrap/Form";
 
 const Advice = () => {
 	const [data, setData] = useState({});
+  const [image,setImage]=useState("")
 
-  useEffect(()=>{
-    fetch("https://api.adviceslip.com/advice")
+	useEffect(() => {
+		fetch("https://api.adviceslip.com/advice")
 			.then((data) => data.json())
 			.then((response) => setData(response.slip));
-console.log(data);
-  },[])
+		// fetch('https://api.api-ninjas.com/v1/randomimage?category=')
+		// 	.then((data) => data.json())
+		// 	.then((response) => console.log(response))
+	}, [data, image]);
+  
 
 	return (
-		<div className='container m-5 justify-content-center' >
+		<div className='container m-5 j'>
 			<div className='row'>
-				<Form  className='d-flex'>
-					<Form.Control
-						type='search'
-						placeholder='Search'
-						className='me-2'
-						aria-label='Search'
-					/>
-					<Button variant='outline-success'>Search</Button>
-				</Form>
-
-      
-          	<div  className='col'>
+				<div className='col-6  ustify-content-center'>
 					<Card style={{ width: "18rem" }}>
-						<Card.Img variant='top' src='holder.js/100px180' />
 						<Card.Body>
-							<Card.Title>{data.id}</Card.Title>
-							<Card.Text>
-							{data.advice}
-							</Card.Text>
-							<Button variant='primary'>Go somewhere</Button>
+							<Card.Title>Advice Number: {data.id}</Card.Title>
+							<Card.Text>{data.advice}</Card.Text>
+							<Button variant='primary' onClick={() => location.reload()}>Load</Button>
 						</Card.Body>
 					</Card>
 				</div>
-         
-			
 			</div>
 		</div>
 	);
