@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div>
-     <Advice/>
+     {/* <Advice/> */}
      <Recipe/>
        
     </div>
