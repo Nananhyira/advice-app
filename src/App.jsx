@@ -1,19 +1,23 @@
-import Advice from "./componenes/Advice"
-import "./App.css"
+import Advice from "./componenes/Advice";
+import Form from "./componenes/Form";
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Recipe from "./componenes/Recipe";
-
+// import Recipe from "./componenes/Recipe";
 
 function App() {
-  
-
-  return (
-    <div>
-     <Advice/>
-     {/* <Recipe/> */}
-       
-    </div>
-  )
+	return (
+		<div className='container'>
+			<div className='row'>
+				<div className='col-md-6'>
+					<Advice />
+					{/* <Recipe/> */}
+				</div>
+				<div className='col-md-6'>
+					<Form />
+				</div>
+			</div>
+		</div>
+	);
 }
 
-export default App
+export default App;
