@@ -31,7 +31,7 @@ const Recipe = () => {
 		<div className='container m-5 j'>
 			<div className='row'>
 				<div className='col-3  justify-content-center'>
-					{/* {recipe.map((item, index) => {
+					 {recipe.map((item, index) => {
 						return (
 							<Card
 								key={index}
@@ -53,7 +53,7 @@ const Recipe = () => {
 								</Card.Body>
 							</Card>
 						);
-					})} */}
+					})} 
 				</div>
 			</div>
 		</div>

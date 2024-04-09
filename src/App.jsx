@@ -9,8 +9,8 @@ function App() {
 
   return (
     <div>
-     {/* <Advice/> */}
-     <Recipe/>
+     <Advice/>
+     {/* <Recipe/> */}
        
     </div>
   )
