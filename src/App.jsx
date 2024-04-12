@@ -9,7 +9,7 @@ function App() {
 		<div className='container'>
 			<div className='row'>
 				<div className='col-md-6'>
-					<Advice />
+					{/* <Advice /> */}
 					{/* <Recipe/> */}
 				</div>
 				<div className='col-md-6'>

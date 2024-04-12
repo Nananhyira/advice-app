@@ -2,12 +2,12 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 
 const Form = () => {
-	const [users, setUsers] = useState({});
+	const [users, setUsers] = useState({name:"ama",email:"ama@@gmail.com"});
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 
-const handleSubmit =() =>{
-  // e.preventDefault();
+const handleSubmit =(e) =>{
+   e.preventDefault();
   let user= {name:name, email:email}
 setUsers(user)
 console.log(users, user);
@@ -20,7 +20,7 @@ console.log(users, user);
 			<div className='row'>
 				<div className='col-md-12  justify-content-center'>
 					<h1>Register form</h1>
-					<form onSubmit={handleSubmit()}>
+					<form onSubmit={handleSubmit}>
 						<input
 							type='text'
 							placeholder='name'
@@ -42,7 +42,9 @@ console.log(users, user);
 						</Button>
 					</form>
 				</div>
-				<div className='col-md-6'></div>
+				<div className='col-md-6'>
+					
+				</div>
 			</div>
 		</div>
 	);
