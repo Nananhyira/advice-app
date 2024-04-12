@@ -8,11 +8,11 @@ function App() {
 	return (
 		<div className='container'>
 			<div className='row'>
-				<div className='col-md-6'>
-					{/* <Advice /> */}
+				<div className='col-md-3 m-2'>
+					<Advice />
 					{/* <Recipe/> */}
 				</div>
-				<div className='col-md-6'>
+				<div className='col-md-9'>
 					<Form />
 				</div>
 			</div>

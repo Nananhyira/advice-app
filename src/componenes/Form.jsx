@@ -1,23 +1,27 @@
 import { useState } from "react";
-import { Row, Card } from "react-bootstrap";
+import { Row, Card, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import { v4 as uuidv4 } from "uuid";
 
 const Form = () => {
-	const [users, setUsers] = useState([{ name: "ama", email: "ama@@gmail.com" }]);
+	const [users, setUsers] = useState([{id:uuidv4(), name: "ama", email: "ama@@gmail.com" }]);
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		let user = { name: name, email: email };
+		let user = { id:uuidv4(), name: name, email: email };
 		setUsers(
 			[...users,user]
 		);
-		// console.log(users);
+		 console.log(users);
 		setName("");
 		setEmail("");
 	};
+const handleDelete = (id) => {
+	setUsers(users.filter(user=>id!==user.id))
 
+}
 	return (
 		<div className='container m-5 j'>
 			<div className='row'>
@@ -45,30 +49,34 @@ const Form = () => {
 						</Button>
 					</form>
 				</div>
-				<div className='col-md-6'>
+				</div>
+				<hr/>
+				<div className='col-md-12'>
 					<Row> 
 						{users.map((item,index)=>{
-							return(
-								<div key={index} className='col-md-4 ml-3'>
-							<Card  style={{ width: "15rem" }}>
-								<Card.Body>
-									<Card.Title>user details</Card.Title>
-									<Card.Subtitle className='mb-2 text-muted'>
-										Name:{item.name}
-									</Card.Subtitle>
-									<Card.Text>Email:{item.email}</Card.Text>
-									<Button variant='primary'>edit</Button>
-									<Button variant='danger'>delete</Button>
-								</Card.Body>
-							</Card>
-						</div>
-							)
+							return (
+								<div key={index} className='col-md-4'>
+									<Col className="col-md-12">
+										<Card style={{ width: "18rem", padding: "5px" }}>
+											<Card.Body>
+												<Card.Title>user details</Card.Title>
+												<Card.Subtitle className='mb-2 text-muted'>
+													Name:{item.name}
+												</Card.Subtitle>
+												<Card.Text>Email:{item.email}</Card.Text>
+												<Button variant='primary'>edit</Button>
+												<Button onClick={()=>handleDelete(item.id)} variant='danger'>delete</Button>
+											</Card.Body>
+										</Card>
+									</Col>
+								</div>
+							);
 							})}
 						
 					</Row>
 				</div>
 			</div>
-		</div>
+		
 	);
 };
 
