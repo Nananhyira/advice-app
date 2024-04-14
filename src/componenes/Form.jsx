@@ -15,10 +15,10 @@ const Form = () => {
 		setUsers(
 			[...users,user]
 		);
-	// console.log(users);
-	// 	setName("");
-	// 	setEmail("");
-	 };
+		setName("");
+		setEmail("");
+	 }
+	 
 const handleDelete = (id) => {
 	setUsers(users.filter(user=>id!==user.id))
 

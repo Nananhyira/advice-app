@@ -5,7 +5,7 @@ import Modal from "react-bootstrap/Modal";
 
 
 function Edit({users, f}) {
-  console.log(users);
+ 
 
 	const [show, setShow] = useState(false);
   const [name, setName] = useState(users.name);
@@ -15,6 +15,7 @@ function Edit({users, f}) {
 		e.preventDefault();
 		let user = { id:users.id, name, email };
 		f(users.id, user)
+    handleClose()
 	};
 
 	const handleClose = () => setShow(false);
