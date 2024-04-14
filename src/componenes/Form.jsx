@@ -15,21 +15,16 @@ const Form = () => {
 		setUsers(
 			[...users,user]
 		);
-	console.log(users);
-		setName("");
-		setEmail("");
-	};
+	// console.log(users);
+	// 	setName("");
+	// 	setEmail("");
+	 };
 const handleDelete = (id) => {
 	setUsers(users.filter(user=>id!==user.id))
 
 }
 const handleEdit = (id,newData) => {
-	setUsers(users.map((item)=>{
-		if(item.id==id){
-			[...users, newData]
-
-		}
-	}))
+	setUsers(users.map((item)=>item.id==id ? newData:item))
 
 
 }
@@ -75,7 +70,7 @@ const handleEdit = (id,newData) => {
 													Name:{item.name}
 												</Card.Subtitle>
 												<Card.Text>Email:{item.email}</Card.Text>
-												<Edit users={users} f={handleEdit}/>
+												<Edit users={item} f={handleEdit}/>
 												<Button onClick={()=>handleDelete(item.id)} variant='danger'>delete</Button>
 											</Card.Body>
 										</Card>

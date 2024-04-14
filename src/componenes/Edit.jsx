@@ -4,19 +4,17 @@ import Modal from "react-bootstrap/Modal";
 import { v4 as uuidv4 } from "uuid";
 
 
-function Edit({users, handleEdit}) {
+function Edit(props) {
+  console.log(props);
 
 	const [show, setShow] = useState(false);
-  const [name, setName] = useState("");
-	const [email, setEmail] = useState("");
+  const [name, setName] = useState(props.users.name);
+	const [email, setEmail] = useState(props.users.email);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		let user = { id: uuidv4(), name: name, email: email };
-		setUsers([...users, user]);
-		console.log(users);
-		setName("");
-		setEmail("");
+		let user = { id: props.users.id, name, email };
+		props.f(props.users.id, user)
 	};
 
 	const handleClose = () => setShow(false);
@@ -50,9 +48,6 @@ function Edit({users, handleEdit}) {
 								setEmail(e.target.value);
 							}}
 						/>
-						<Button type='submit' variant='primary'>
-							submit
-						</Button>
 					</form>
 				</Modal.Body>
 				<Modal.Footer>
