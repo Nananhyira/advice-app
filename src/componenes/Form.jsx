@@ -18,7 +18,7 @@ const Form = () => {
 		setName("");
 		setEmail("");
 	 }
-	 
+
 const handleDelete = (id) => {
 	setUsers(users.filter(user=>id!==user.id))
 
@@ -59,9 +59,9 @@ const handleEdit = (id,newData) => {
 				<hr/>
 				<div className='col-md-12'>
 					<Row> 
-						{users.map((item,index)=>{
+						{users.map((item)=>{
 							return (
-								<div key={index} className='col-md-4'>
+								<div key={item.id} className='col-md-4'>
 									<Col className="col-md-12">
 										<Card style={{ width: "18rem", padding: "5px" }}>
 											<Card.Body>
