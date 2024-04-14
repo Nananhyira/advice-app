@@ -1,20 +1,20 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { v4 as uuidv4 } from "uuid";
 
 
-function Edit(props) {
-  console.log(props);
+
+function Edit({users, f}) {
+  console.log(users);
 
 	const [show, setShow] = useState(false);
-  const [name, setName] = useState(props.users.name);
-	const [email, setEmail] = useState(props.users.email);
+  const [name, setName] = useState(users.name);
+	const [email, setEmail] = useState(users.email);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		let user = { id: props.users.id, name, email };
-		props.f(props.users.id, user)
+		let user = { id:users.id, name, email };
+		f(users.id, user)
 	};
 
 	const handleClose = () => setShow(false);
@@ -31,7 +31,7 @@ function Edit(props) {
 					<Modal.Title>Modal heading</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
-					<form onSubmit={handleSubmit}>
+					<form >
 						<input
 							type='text'
 							placeholder='name'
@@ -54,7 +54,7 @@ function Edit(props) {
 					<Button variant='secondary' onClick={handleClose}>
 						Close
 					</Button>
-					<Button variant='primary' onClick={handleClose}>
+					<Button variant='primary' onClick={handleSubmit}>
 						Save Changes
 					</Button>
 				</Modal.Footer>

@@ -24,7 +24,7 @@ const handleDelete = (id) => {
 
 }
 const handleEdit = (id,newData) => {
-	setUsers(users.map((item)=>item.id==id ? newData:item))
+	setUsers(users.map((item)=>item.id===id?newData:item))
 
 
 }
