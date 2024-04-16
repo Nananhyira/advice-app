@@ -4,16 +4,23 @@ import axios from "axios"
 
 const Search = () => {
   const [data, setData]=useState([])
+  const [v, setV]=useState(data)
 
   	useEffect(()=>{
 		axios.get("https://jsonplaceholder.typicode.com/users").then((response)=>{setData(response.data)})
 
 	},[])
-  console.log(data);
+  const handleChange=(e)=>{
+    const val = e.target.value
+setV(data.filter(i=>i.name.includes(val)))
+
+  }
+
   return (
     <div>
       <h1>Search</h1>
-      <input/>
+      <input type="text" onChange={handleChange} value={v}/>
+      <h1>{v}</h1>
      {data.map((item, index)=>{
       return(
        <div key={index}>
