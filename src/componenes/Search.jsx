@@ -17,18 +17,37 @@ const Search = () => {
 	};
 
 	return (
-		<div>
-			<h1>Search</h1>
-			<input type='text' onChange={handleChange} placeholder='search' />
-			<h1>{v}</h1>
-			{v.map((item, index) => {
+		<div className="p-5 bg-light">
+      <div className="bg-white shadow border">
+        <h1>Search</h1>
+			<input type='text' onChange={handleChange} className="form-control" placeholder='search' />
+			<table className="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>PHONE</th>
+          </tr>
+        </thead>
+        <tbody>
+      {v.map((item, index) => {
 				return (
-					<div key={index}>
-						<h1>{item.name}</h1>
-						<h3></h3>
-					</div>
+					<tr key={index}>
+						<td>{item.id}</td>
+            <td>{item.name}</td>
+            <td>{item.email}</td>
+            <td>{item.phone}</td>
+					</tr>
 				);
 			})}
+        </tbody>
+        
+      </table>
+			
+
+      </div>
+			
 		</div>
 	);
 };
