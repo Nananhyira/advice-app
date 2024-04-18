@@ -3,7 +3,7 @@ import axios from "axios";
 
 const Search = () => {
 	const [data, setData] = useState([]);
-	const [v, setV] = useState(data);
+	const [v, setV] = useState([]);
 
 	useEffect(() => {
 		axios.get("https://jsonplaceholder.typicode.com/users").then((response) => {
@@ -17,11 +17,10 @@ const Search = () => {
 	};
 
 	return (
-		<div className="p-5 bg-light">
-      <div className="bg-white shadow border">
-        <h1>Search</h1>
+		<div className="p-5 bg-light border shadow">
+      <div className="bg-white ">
 			<input type='text' onChange={handleChange} className="form-control" placeholder='search' />
-			<table className="table">
+			<table className="table bg-primary">
         <thead>
           <tr>
             <th>ID</th>
