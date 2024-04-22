@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Search from "./componenes/Search";
 import Memory from "./componenes/Memory";
 
-// import Recipe from "./componenes/Recipe";
+ import Recipe from "./componenes/Recipe";
 
 
 function App() {
