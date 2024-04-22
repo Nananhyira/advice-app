@@ -1,8 +1,12 @@
-import React from 'react'
+import {useState} from 'react'
 
 const News = () => {
+  const [rate, setRate]=useState()
   return (
-    <div>News</div>
+    <div>
+      <h1>Rating Customers</h1>
+      
+    </div>
   )
 }
 

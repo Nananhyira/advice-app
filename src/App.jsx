@@ -6,6 +6,7 @@ import Search from "./componenes/Search";
 import Memory from "./componenes/Memory";
 
  import Recipe from "./componenes/Recipe";
+import News from "./componenes/News";
 
 
 function App() {
@@ -17,9 +18,10 @@ function App() {
 					<Advice />
 					{/* <Recipe/> */}
 					{/* <Search/> */}
-					<Memory/>
+					<Memory/>News
 				</div>
 				<div className='col-md-9'>
+					<News/>
 					<Form />
 				</div>
 			</div>
