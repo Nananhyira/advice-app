@@ -18,11 +18,11 @@ function App() {
 					<Advice />
 					{/* <Recipe/> */}
 					{/* <Search/> */}
-					<Memory/>News
+					{/* <Memory/> */}
 				</div>
 				<div className='col-md-9'>
 					<News/>
-					<Form />
+					{/* <Form /> */}
 				</div>
 			</div>
 		</div>
