@@ -6,12 +6,11 @@ const News = () => {
   return (
 		<div>
 			<h1>Rating Customers</h1>
-			<i
-				className='bi bi-star-fill  self'
-				style={{ width: "40rem", height: "40px" }}></i>
-			<i className='bi bi-star-fill self'></i>
-			<i className='bi bi-star-fill self'></i>
-			<i className='bi bi-star-fill self'></i>
+			<i className='bi bi-star-fill  self' style={{ fontSize: "10rem" }}></i>
+			<i className='bi bi-star-fill self' style={{ fontSize: "8rem" }}></i>
+			<i className='bi bi-star-fill self' style={{ fontSize: '6rem' }}></i>
+			<i className='bi bi-star-fill self'style={{ fontSize: '5rem' }}></i>
+			<i className='bi bi-star-half self'style={{ fontSize: '5rem' }}></i>
 		</div>
 	);
 }

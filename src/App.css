@@ -3,3 +3,8 @@ html, body {
   margin:auto;
   /* background-color: black; */
 }
+
+.self:hover {
+  color:red
+
+}
