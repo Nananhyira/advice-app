@@ -7,6 +7,7 @@ import Memory from "./componenes/Memory";
 
  import Recipe from "./componenes/Recipe";
 import News from "./componenes/News";
+import { Navbar } from "react-bootstrap";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
 		<div className='container'>
 			<div className='row'>
 				<div className='col-md-3 m-2'>
+					<Navbar/>
 					<Advice />
 					{/* <Recipe/> */}
 					{/* <Search/> */}
