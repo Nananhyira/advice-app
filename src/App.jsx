@@ -7,7 +7,7 @@ import Memory from "./componenes/Memory";
 
  import Recipe from "./componenes/Recipe";
 import News from "./componenes/News";
-import { Navbar } from "react-bootstrap";
+import  Navbar  from "./componenes/Navbar";
 
 
 function App() {
