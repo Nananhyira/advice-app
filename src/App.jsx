@@ -19,11 +19,11 @@ function App() {
 					<Navbar/>
 					<Advice />
 					{/* <Recipe/> */}
-					{/* <Search/> */}
+					<Search/>
 					{/* <Memory/> */}
 				</div>
 				<div className='col-md-9'>
-					<News/>
+					{/* <News/> */}
 					{/* <Form /> */}
 				</div>
 			</div>
